@@ -17,11 +17,11 @@ def handle_turtle_pose(msg):
 	counter += 0.01
 
 	
-rospy.init_node('tf_tutrle')
-turtlename = rospy.get_param('~turtle_tf_name')
-sat = 'sat'
-counter = 0
-	
-
-rospy.Subscriber('input_pose', Pose, handle_turtle_pose)
-rospy.spin()
+if __name__ == '__main__':
+	rospy.init_node('tf_tutrle')
+	turtlename = rospy.get_param('~turtle_tf_name')
+	sat = 'sat'
+	counter = 0
+		
+	rospy.Subscriber('input_pose', Pose, handle_turtle_pose)
+	rospy.spin()
